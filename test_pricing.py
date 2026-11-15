@@ -1,9 +1,13 @@
 import unittest
 from decimal import Decimal
 from pricing import PaintCalculator
+from labels import SUMMARY_LABEL
 
 
 class PaintCalculatorTests(unittest.TestCase):
+    def test_final_label(self):
+        self.assertEqual(SUMMARY_LABEL, "Итоговая стоимость окраски")
+
     def test_base_price(self):
         self.assertEqual(PaintCalculator().calculate("капот", "белый"), Decimal("12000.00"))
 
